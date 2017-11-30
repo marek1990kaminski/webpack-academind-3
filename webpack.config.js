@@ -15,7 +15,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: "bundle.js",
         //publicPath: "/dist"
-        // it was needed, when wi didnt have the HTML file in dist
+        // it was needed, when we didnt have the HTML file in dist
     },
     module: {
         rules: [
