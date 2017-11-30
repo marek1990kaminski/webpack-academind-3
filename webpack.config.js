@@ -42,7 +42,7 @@ module.exports = {
             },
             {
                 test: /\.(jpg|png)$/,
-                use:[
+                use: [
                     {
                         loader: 'file-loader',
                         options: {
@@ -55,7 +55,7 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                use:[
+                use: [
                     {
                         loader: 'file-loader',
                         options: {
@@ -75,11 +75,11 @@ module.exports = {
             filename: 'index.html',
             template: 'src/index.html'
         }),
-       /* new HtmlWebpackPlugin({
-            filename: 'users.html',
-            template: 'src/users.html',
-            chunks: ['app']
-        }),*/
+        /* new HtmlWebpackPlugin({
+             filename: 'users.html',
+             template: 'src/users.html',
+             chunks: ['app']
+         }),*/
         new CleanWebpackPlugin(['dist'])
     ]
 };
