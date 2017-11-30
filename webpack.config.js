@@ -8,7 +8,9 @@ let extractPlugin = new ExtractTextPlugin({
 });
 
 module.exports = {
-    entry: './src/js/app.js',
+    entry: {
+        app: './src/js/app.js'
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: "bundle.js",
@@ -50,6 +52,19 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.html$/,
+                use:[
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            //publicPath: 'img/'
+                        }
+                    }
+                ],
+                exclude: path.resolve(__dirname, 'src/index.html')
             }
 
         ]
@@ -57,8 +72,14 @@ module.exports = {
     plugins: [
         extractPlugin,
         new HtmlWebpackPlugin({
+            filename: 'index.html',
             template: 'src/index.html'
         }),
+       /* new HtmlWebpackPlugin({
+            filename: 'users.html',
+            template: 'src/users.html',
+            chunks: ['app']
+        }),*/
         new CleanWebpackPlugin(['dist'])
     ]
 };
