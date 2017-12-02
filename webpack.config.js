@@ -5,10 +5,11 @@ let HtmlWebpackPlugin = require('html-webpack-plugin');
 let CleanWebpackPlugin = require('clean-webpack-plugin');
 
 let extractPlugin = new ExtractTextPlugin({
-    filename: 'main.css'
+    filename: 'main.scss'
 });
 
 module.exports = {
+    devtool: 'inline-source-map',
     entry: {
         app: './src/js/app.js'
     },
