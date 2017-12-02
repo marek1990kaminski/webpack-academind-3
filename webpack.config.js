@@ -5,7 +5,7 @@ let HtmlWebpackPlugin = require('html-webpack-plugin');
 let CleanWebpackPlugin = require('clean-webpack-plugin');
 
 let extractPlugin = new ExtractTextPlugin({
-    filename: 'main.scss'
+    filename: 'main.css'
 });
 
 module.exports = {
